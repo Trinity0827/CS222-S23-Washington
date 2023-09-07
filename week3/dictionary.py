@@ -9,6 +9,13 @@ def main():
         "Frank": 72,
     }
 
+    print("Gary" in finalExamScores.keys()) # give false
+    print(finalExamScores.get('Carol')) # give the value
+    print(finalExamScores.get('Harry'))
+
+
+    
+
     #print(finalExamScores["Eve"])
     #finalExamScores["Eve"] = 57 #change the value 
     #print(finalExamScores["Eve"])
@@ -25,26 +32,36 @@ def main():
     #for key, value in finalExamScores.items():
        # print(value)
 
+    students = [
+        {
+            "firstName": "Alice",
+            "lastName" : "Smith",
+            "Major" : "Chemistry",
+            "gpa" : 3.92,
+            "courses" : ["CS 120", "CS222", "MATH 165"]
+        },
+        {
+        
+            "firstName": "Bob",
+            "lastName" : "Jones",
+            "Major" : "Physics",
+            "gpa" : 3.3,
+            "courses" : ["CS222", "MATH 166"]
+        }
+    ]
+
+    print(len(students)) 
+    for s in students:
+        #if s["Major"] == "Physics" : # each item in the list
+         #   print(s["lastName"]+ " , " + s ["firstName"])
+       # if (s["gpa"]) > 3.5:
+         #  print(s)
+        if "CS 222" in s["courses"]: # anything with CS in that major 
+            print(s["lastName"] + " , " + s ["firstName"])
 
 
-
-
-
-    alice = {"firstName": "Alice",
-        "lastName" : "Smith",
-        "Major" : "Chemistry",
-        "gpa" : 3.92,
-        "courses" : ["CS 120", "CS124", "MATH 165"]
-    }
-    
-    bob = {"firstName": "Bob",
-        "lastName" : "Jones",
-        "Major" : "Physics",
-        "gpa" : 3.3,
-        "courses" : ["CS222", "MATH 166"]
-    }
-    print(alice["courses"][2])
-    for c in bob["courses"]:
-        print(c)
+    #print(alice["courses"][2])
+    #for c in bob["courses"]:
+      #  print(c)
     
 main()
