@@ -13,5 +13,4 @@ def main():
     for letter in bsu: # print out one at a time going down the line 
         print(letter)
     
-
 main()
