@@ -28,8 +28,4 @@ def main():
    numbers = [10,15,0,-10,10,7,5]
    print(numbers[1:5:2]) # start at index 5 and then jumps 2 spot 
 
-
-
-
-
 main()
