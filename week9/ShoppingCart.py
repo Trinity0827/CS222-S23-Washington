@@ -1,5 +1,33 @@
 import unittest
 
+class ShoppingCart:
+    def __init__(self):
+        self.items = []
+
+    def AddItem(self, product, quantity = 1):
+        self.items.append({'product' : product, 'quantity': quantity}) #adding items to the list
+
+
+    def RemoveItem(self, product, quantity = 1):
+        for item in self.items:
+            if item['product'] == product:
+                item['quantity'] -= quantity
+                if item['quantity'] <= 0:
+                    self.items.remove(item)
+
+    def CalculateTotal(self):
+        total = sum(item['product'].price * item['quantity'] for item in self.items)
+        return total
+
+
+class Product:
+     def __init__(self, name, price):
+         self.name = name
+         self.price = price
+
+
+
+
 class TestShoppingCart(unittest.TestCase):
     def setUp(self) -> None:
         self.cart = ShoppingCart()
@@ -28,37 +56,6 @@ class TestShoppingCart(unittest.TestCase):
         self.assertEqual(total, 12000)  # that is 1000 * 2, 2000 * 5 = 12000
 
     
-# test 2
-class ShoppingCart:
-    def __init__(self):
-        self.items = []
-        pass
-
-    def AddItem(self, product, quantity = 1):
-        self.items.append({'product' : product, 'quantity': quantity}) #adding items to the list
-
-
-    def RemoveItem(self, product, quantity = 1):
-        for item in self.items:
-            if item['product'] == product:
-                item['quamtity'] -= quantity
-                if item['quantity'] <= 0:
-                    self.items.remove(item)
-
-    def CalculateTotal(self):
-        total = sum(item['product'].price * item['quantity'] for items in self.items)
-        return total
-
-
-class Product:
-     def __init__(self, name, price):
-         pass
-
-
-
-
-
-
 
 if __name__ == "__main__":
     unittest.main()
